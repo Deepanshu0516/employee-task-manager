@@ -22,6 +22,26 @@ function App() {
     }
   }, [])
 
+  useEffect(() => {
+  if (user === 'employee' && loggedInUserData && userData) {
+    const updatedEmployee = userData.find(
+      employee => employee.id === loggedInUserData.id
+    )
+
+    if (updatedEmployee) {
+      setLoggedInUserData(updatedEmployee)
+
+      localStorage.setItem(
+        'loggedInUser',
+        JSON.stringify({
+          role: 'employee',
+          data: updatedEmployee
+        })
+      )
+    }
+  }
+}, [userData, user])
+
   const handleLogin = (email, password) => {
     const { admin } = getLocalStorage()
 
