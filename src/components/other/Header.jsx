@@ -13,7 +13,7 @@ const Header = (props) => {
         <div className='flex items-center justify-between'>
             <h1 className='text-white text-2xl font-medium flex flex-col items-start'>
                 Hello <br />
-                <span className='text-3xl font-semibold'>{props.data?.firstName || 'User'} 👋</span>
+                <span className='text-3xl font-semibold'>{props.data?.firstName || 'Deepanshu'} 👋</span>
             </h1>
             <button
             onClick={logOutUser} 
